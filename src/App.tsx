@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { stat } from "node:fs";
 
-const App = () =>  {
+const App = () => {
+  const [monsters, setMonsters] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((users) => setMonsters(users));
+  })
+
+  // console.log('mon', monsters)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        monsters.map( monster => (
+          <h1>{ monster?.name }</h1>
+         ))
+      }
     </div>
   );
-}
+};
 
 export default App;
