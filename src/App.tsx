@@ -13,15 +13,10 @@ const App = () => {
       .then((users) => setMonsters(users));
   });
 
-  // console.log('mon', monsters)
 
   return (
     <div className="App">
-      <CardList name='none'>
-        {monsters.map((monster) => (
-          <h1>{monster?.name}</h1>
-        ))}
-      </CardList>
+      <CardList monsters={ monsters } />
     </div>
   );
 };
