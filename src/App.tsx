@@ -24,12 +24,17 @@ const App = () => {
 
   return (
     <div className="App">
-      <input type='search' placeholder='Search' value={ searchTerm } onChange={handleSearch} />
-      {monsters.length > 1 ? 
-       <CardList monsters={ monsters } />
-       :
-       <h1>Sorry No Monsters Matching</h1> 
-}
+      <input
+        type="search"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={handleSearch}
+      />
+      {monsters.length > 0 ? (
+        <CardList monsters={monsters} />
+      ) : (
+        <h1>Sorry No Monsters Matching</h1>
+      )}
     </div>
   );
 };
