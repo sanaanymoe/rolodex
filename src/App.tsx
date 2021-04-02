@@ -25,7 +25,11 @@ const App = () => {
   return (
     <div className="App">
       <input type='search' placeholder='Search' value={ searchTerm } onChange={handleSearch} />
-      <CardList monsters={ monsters } />
+      {monsters.length > 1 ? 
+       <CardList monsters={ monsters } />
+       :
+       <h1>Sorry No Monsters Matching</h1> 
+}
     </div>
   );
 };
