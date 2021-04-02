@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { stat } from "node:fs";
 import { CardList } from "./components/CardList/CardList";
 
 const App = () => {
