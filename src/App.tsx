@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { CardList } from "./components/CardList/CardList";
+import { SearchBox } from './components/SearchBox/SearchBox'
 
 const App = () => {
   const [monsters, setMonsters] = useState<any[]>([]);
@@ -24,12 +25,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <input
-        type="search"
-        placeholder="Search"
-        value={searchTerm}
-        onChange={handleSearch}
-      />
+      <SearchBox placeHolder="Search Monsters" handleChange ={handleSearch}/>
       {monsters.length > 0 ? (
         <CardList monsters={monsters} />
       ) : (
