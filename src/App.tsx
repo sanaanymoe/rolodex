@@ -25,6 +25,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <h1> Monsters Rolodex </h1>
       <SearchBox placeHolder="Search Monsters" handleChange ={handleSearch}/>
       {monsters.length > 0 ? (
         <CardList monsters={monsters} />
